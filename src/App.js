@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
-function App() {
+import { HomePage, DestinationPage, CrewPage, TechnologyPage } from "./pages";
+import { Layout } from "./components";
+import DesignSystem from "./pages/DesignSystem";
+
+import data from "./data.json";
+
+const App = () => {
+  const { destinations, crew, technology } = data;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/design" element={<DesignSystem />} />
+      <Route element={<Layout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/destination"
+          element={<DestinationPage destinations={destinations} />}
+        />
+
+        <Route path="/crew" element={<CrewPage crew={crew} />} />
+        <Route
+          path="/technology"
+          element={<TechnologyPage technology={technology} />}
+        />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
