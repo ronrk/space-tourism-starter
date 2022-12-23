@@ -15,13 +15,13 @@ const Navbar = () => {
   };
 
   return (
-    <Wrapper className="">
+    <Wrapper className="primary-header flex">
       <div>
-        <img src={logo} alt="logo" className="" />
+        <img src={logo} alt="logo" className="logo" />
       </div>
 
       <button
-        className=""
+        className="mobile-nav-toggle"
         aria-controls="primary-navigation"
         aria-expanded={showNavbar}
         onClick={toggleNavbar}
@@ -30,25 +30,44 @@ const Navbar = () => {
         {showNavbar ? <CloseIcon /> : <MenuIcon />}
       </button>
       <nav className="nav">
-        <div className="nav-bg"></div>
-        <ul id="primary-navigation">
+        <div className=""></div>
+        <ul
+          id="primary-navigation"
+          className={
+            showNavbar
+              ? "primary-navigation underline-indicators flex show"
+              : "primary-navigation underline-indicators flex"
+          }
+        >
           <li className={pathname === "/" ? "active" : null}>
-            <Link to="/">
+            <Link
+              to="/"
+              className="uppercase text-white letter-spacing-2 ff-sans-cond"
+            >
               <span aria-hidden="true">00</span>Home
             </Link>
           </li>
           <li className={pathname === "/destination" ? "active" : null}>
-            <Link to="/destination?query=moon">
+            <Link
+              to="/destination?query=moon"
+              className="uppercase text-white letter-spacing-2 ff-sans-cond"
+            >
               <span aria-hidden="true">01</span>Destination
             </Link>
           </li>
           <li className={pathname === "/crew" ? "active" : null}>
-            <Link to="/crew?query=commander">
+            <Link
+              to="/crew?query=commander"
+              className="uppercase text-white letter-spacing-2 ff-sans-cond"
+            >
               <span aria-hidden="true">02</span>Crew
             </Link>
           </li>
           <li className={pathname === "/technology" ? "active" : null}>
-            <Link to="/technology">
+            <Link
+              to="/technology"
+              className="uppercase text-white letter-spacing-2 ff-sans-cond"
+            >
               <span aria-hidden="true">03</span>Technology
             </Link>
           </li>

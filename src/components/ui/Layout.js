@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Wrapper from "./styled/Layout.styled";
 
@@ -15,6 +15,9 @@ const Layout = () => {
 
   return (
     <Wrapper className={`app ${bg}`}>
+      <a href="#main" className="text-white skip-to-content sr-only">
+        Skip to content
+      </a>
       <Navbar />
       <Outlet />
     </Wrapper>

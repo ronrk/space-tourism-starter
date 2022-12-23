@@ -6,20 +6,39 @@
   --color-light: 231, 77%, 90%;
   --color-white: 0, 0%, 100%;
 
-  /* FONT_SIZE */
-  --fs-900: 9.375rem;
-  --fs-800: 6.25rem;
-  --fs-700: 3.5rem;
-  --fs-600: 2rem;
-  --fs-500: 1.75rem;
-  --fs-400: 1.125rem;
-  --fs-300: 1rem;
-  --fs-200: 0.875rem;
+  /* FONT_SIZE(small) */
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: 3.5rem;
+  --fs-700: 1.5rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1rem;
+  --fs-400: 1.25rem;
 
   /* FONT_FAMILIES */
   --ff-serif: "Bellefair", serif;
   --ff-sans-cond: "Barlow Condensed", sans-serif;
   --ff-sans-normal: "Barlow", sans-serif;
+}
+
+@media screen and (min-width: 35em) {
+  :root {
+    /* FONT SIZE(medium) */
+
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.75rem;
+    --fs-400: 1rem;
+  }
+}
+
+@media screen and (min-width: 45em) {
+  :root {
+    /* FONT SIZE(large) */
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-400: 1.125rem;
+  }
 }
 
 /* ---------------- */
@@ -63,6 +82,10 @@ picture {
   max-width: 100%;
 }
 
+ul {
+  list-style-type: none;
+}
+
 input,
 button,
 textarea,
@@ -93,12 +116,7 @@ p {
 /* ---------------- */
 
 body {
-  line-height: 1.5;
-  min-height: 100vh;
-  font-family: var(--ff-sans-normal);
-  background-color: hsl(var(--color-dark));
-  color: hsl(var(--color-white));
-  font-size: var(--fs-400);
+  overflow-x: hidden;
 }
 
 /* ---------------- */
@@ -123,6 +141,10 @@ body {
 
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
+}
+
+.d-block {
+  display: block;
 }
 
 .sr-only {

@@ -4,11 +4,11 @@ import Wrapper from "./HomePage.styled";
 
 const HomePage = () => {
   return (
-    <Wrapper className="">
+    <Wrapper className="grid-container flow" id="main">
       <div>
-        <h1>
+        <h1 className="text-light fs-600 ff-sans-conde upperecase letter-spacing-1">
           SO, YOU WANT TO TRAVEL TO
-          <span>SPACE</span>
+          <span className="text-white fs-900 ff-serif d-block">SPACE</span>
         </h1>
 
         <p>
@@ -19,7 +19,12 @@ const HomePage = () => {
         </p>
       </div>
       <div>
-        <Link to="/design">Explore</Link>
+        <Link
+          to="/design"
+          className="btn--explore bg-white text-dark uppercase ff-serif"
+        >
+          Explore
+        </Link>
       </div>
     </Wrapper>
   );
