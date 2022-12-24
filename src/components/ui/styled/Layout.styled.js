@@ -32,8 +32,10 @@ const LayoutWrapper = styled.div`
     display: grid;
     place-items: center;
     padding-inline: 1rem;
+    padding-bottom: 3em;
+    margin-inline: auto;
 
-    & * {
+    & p:not([class]) {
       max-width: 55ch;
     }
 
@@ -43,12 +45,6 @@ const LayoutWrapper = styled.div`
           1fr
         );
       column-gap: var(--container-gap, 2rem);
-      & > *:first-child {
-        grid-column: 2;
-      }
-      & > *:last-child {
-        grid-column: 3;
-      }
     }
   }
 
@@ -71,7 +67,7 @@ const LayoutWrapper = styled.div`
 
   & .underline-indicators {
     & > * {
-      padding: var(--underline-gap, 1rem) 0;
+      padding: var(--underline-gap, 0.5rem) 0;
       border-bottom: 0.2em solid hsl(var(--color-white), 0);
       &:hover,
       &:focus {

@@ -21,11 +21,11 @@ const DestinationPage = ({ destinations }) => {
   };
 
   return (
-    <Wrapper className="">
-      <h1 className="">
+    <Wrapper className="grid-container flow ">
+      <h1 className="numbered-title fs-500">
         <span aria-hidden="true">01</span>Pick your destination
       </h1>
-      <picture>
+      <picture className="destination__img">
         <source srcSet={activeDestination?.images.webp} type="image/webp" />
         <img
           src={activeDestination?.images?.png}
@@ -33,10 +33,11 @@ const DestinationPage = ({ destinations }) => {
         />
       </picture>
 
-      <div className="">
+      <div className="tab-list underline-indicators flex">
         <button
           onClick={() => handleTabChange("moon")}
           aria-selected={destinationQuery === "moon"}
+          className="uppercase ff-sans-cond text-light letter-spacing-2"
         >
           Moon
         </button>
@@ -44,6 +45,7 @@ const DestinationPage = ({ destinations }) => {
         <button
           onClick={() => handleTabChange("mars")}
           aria-selected={destinationQuery === "mars"}
+          className="uppercase ff-sans-cond text-light letter-spacing-2"
         >
           mars
         </button>
@@ -51,6 +53,7 @@ const DestinationPage = ({ destinations }) => {
         <button
           onClick={() => handleTabChange("europa")}
           aria-selected={destinationQuery === "europa"}
+          className="uppercase ff-sans-cond text-light letter-spacing-2"
         >
           europa
         </button>
@@ -58,6 +61,7 @@ const DestinationPage = ({ destinations }) => {
         <button
           onClick={() => handleTabChange("titan")}
           aria-selected={destinationQuery === "titan"}
+          className="uppercase ff-sans-cond text-light letter-spacing-2"
         >
           titan
         </button>

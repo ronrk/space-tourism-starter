@@ -41,6 +41,7 @@ const Navbar = () => {
         >
           <li className={pathname === "/" ? "active" : null}>
             <Link
+              onClick={toggleNavbar}
               to="/"
               className="uppercase text-white letter-spacing-2 ff-sans-cond"
             >
@@ -49,6 +50,7 @@ const Navbar = () => {
           </li>
           <li className={pathname === "/destination" ? "active" : null}>
             <Link
+              onClick={toggleNavbar}
               to="/destination?query=moon"
               className="uppercase text-white letter-spacing-2 ff-sans-cond"
             >
@@ -57,6 +59,7 @@ const Navbar = () => {
           </li>
           <li className={pathname === "/crew" ? "active" : null}>
             <Link
+              onClick={toggleNavbar}
               to="/crew?query=commander"
               className="uppercase text-white letter-spacing-2 ff-sans-cond"
             >
@@ -65,7 +68,8 @@ const Navbar = () => {
           </li>
           <li className={pathname === "/technology" ? "active" : null}>
             <Link
-              to="/technology"
+              onClick={toggleNavbar}
+              to="/technology?query=launchvehicle"
               className="uppercase text-white letter-spacing-2 ff-sans-cond"
             >
               <span aria-hidden="true">03</span>Technology
